@@ -8,14 +8,14 @@ docker run -p5432:5432 --name postgres postgres
 ```
 Run the application with [Payara Micro](https://www.payara.fish/payara_micro):
 ```
-java -jar payara-micro-5.181.jar --deploy flyway-example/target/flyway-example-1.0-SNAPSHOT
+java -jar payara-micro-5.181.jar --deploy flyway-example/target/flyway-example-1.0-SNAPSHOT.war
 ```
 
 During the startup process the application will create a schema named <b>book_app</b>, 
 run the SQL scripts from <b>src/main/resources/flyway/postgres</b>
 and insert the books defined in the setup method of Libary.java.
 
-After the application has started you find in the database a schema called <b>book_app</b> with two tables: BOOK & SCHEMA_VERSION
+After the application has started you find in the database a schema called <b>book_app</b> with two tables: Book & Schema Version
 
 |ISBN          | AUTHOR                    | TITLE     | PUBLISHER      |
 |--------------|---------------------------|-----------|----------------|
